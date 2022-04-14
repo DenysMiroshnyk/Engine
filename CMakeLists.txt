@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 
 # Set the project name to your project name
 project(Engine CXX)
@@ -51,8 +51,11 @@ if(ENABLE_PCH)
     <utility>)
 endif()
 
+include(cmake/Conan.cmake)
+run_conan()
+
 # testing option
-option(ENABLE_TESTING "Enable Test Builds" OFF)
+option(ENABLE_TESTING "Enable Test Builds" ON)
 if(ENABLE_TESTING)
   enable_testing()
   message("Building Tests. Be sure to check out test/constexpr_tests for constexpr testing")
