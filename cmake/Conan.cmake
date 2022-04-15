@@ -2,7 +2,7 @@ macro(run_conan)
   # Download automatically, you can also just copy the conan.cmake file
   if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
     message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-    file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake" "${CMAKE_BINARY_DIR}/conan.cmake")
+    file(DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/release/0.18/conan.cmake" "${CMAKE_BINARY_DIR}/conan.cmake")
   endif()
 
   include(${CMAKE_BINARY_DIR}/conan.cmake)
@@ -42,15 +42,10 @@ macro(run_conan)
     NAME bincrafters
     URL https://api.bintray.com/conan/bincrafters/public-conan
   )
-  conan_cmake_settings(settings)
 
-  conan_cmake_install(
-    CONAN_COMMAND ${CONAN_CMD}
-    CONANFILE .
-    OUTPUT_FOLDER ${PROJECT_SOURCE_DIR}/includes
-    INSTALL_FOLDER ${PROJECT_SOURCE_DIR}/external
-    BUILD missing
-    SETTINGS ${settings}
-  )
+  conan_cmake_run(
+    CONANFILE ./conanfile.txt
+    BASIC_SETUP CMAKE_TARGETS # individual targets to link to
+    BUILD missing)
 
 endmacro()
