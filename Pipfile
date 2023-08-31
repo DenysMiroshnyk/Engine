@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 
 [dev-packages]
-conan = "*"
+conan = "1.58.0"
 
 [requires]
 python_version = "3.8"
