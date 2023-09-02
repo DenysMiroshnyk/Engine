@@ -1,0 +1,19 @@
+{
+	"name": "Engine Dev Container",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cmake-tools",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"formulahendry.code-runner",
+				"eamodio.gitlens",
+				"cschlosser.doxdocgen",
+				"cheshirekow.cmake-format"
+			]
+		}
+	}
+}

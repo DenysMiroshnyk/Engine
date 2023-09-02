@@ -44,7 +44,7 @@ macro(run_conan)
   )
 
   conan_cmake_run(
-    CONANFILE ./conanfile.txt
+    CONANFILE ./conanfile.py
     BASIC_SETUP CMAKE_TARGETS # individual targets to link to
     BUILD missing)
 
