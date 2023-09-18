@@ -1,8 +1,6 @@
 {
 	"name": "Engine Dev Container",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"image": "dmiroshnyk/ubuntu-vulkan-cmake-clang:latest",
 	"customizations": {
 		"vscode": {
 			"extensions": [
