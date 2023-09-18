@@ -12,7 +12,9 @@
 				"formulahendry.code-runner",
 				"eamodio.gitlens",
 				"cschlosser.doxdocgen",
-				"cheshirekow.cmake-format"
+				"cheshirekow.cmake-format",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python"
 			]
 		}
 	}
