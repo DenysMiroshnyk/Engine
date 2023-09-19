@@ -46,6 +46,7 @@ macro(run_conan)
   conan_cmake_run(
     CONANFILE ./conanfile.py
     BASIC_SETUP CMAKE_TARGETS # individual targets to link to
-    BUILD missing)
+    BUILD missing
+    INSTALL_ARGS -c tools.system.package_manager:mode=install)
 
 endmacro()
