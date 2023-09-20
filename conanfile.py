@@ -8,7 +8,8 @@ class Engine(ConanFile):
         "docopt.cpp/0.6.2",
         "fmt/6.2.0",
         "spdlog/1.5.0",
-        "vulkan-headers/1.3.211.0"
+        "vulkan-headers/1.3.250.0",
+        "glm/cci.20230113"
     ]
 
     settings = "os", "compiler", "build_type", "arch"

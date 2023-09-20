@@ -57,3 +57,4 @@ conaninfo.txt
 graph_info.json
 Pipfile.lock
 /CMakeSettings.json
+.cache

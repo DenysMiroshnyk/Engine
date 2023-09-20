@@ -10,5 +10,6 @@ target_link_libraries(
     PRIVATE project_options
             project_warnings
             CONAN_PKG::glfw
-            # CONAN_PKG::Vulkan::Vulkan
+            CONAN_PKG::vulkan-headers
+            CONAN_PKG::glm
 )
