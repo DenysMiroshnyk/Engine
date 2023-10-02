@@ -44,9 +44,11 @@ macro(run_conan)
   )
 
   conan_cmake_run(
-    CONANFILE ./conanfile.py
-    BASIC_SETUP CMAKE_TARGETS # individual targets to link to
+    CONANFILE "${CMAKE_SOURCE_DIR}/conanfile.py"
+    BASIC_SETUP CMAKE_TARGETS
+    PROFILE "${CMAKE_SOURCE_DIR}/cmake/toolchain/llvm-mingw32-x86_64"
     BUILD missing
+    SETTINGS "build_type=${CMAKE_BUILD_TYPE}"
     INSTALL_ARGS -c tools.system.package_manager:mode=install)
 
 endmacro()

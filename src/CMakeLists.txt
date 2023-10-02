@@ -13,3 +13,11 @@ target_link_libraries(
             CONAN_PKG::vulkan-headers
             CONAN_PKG::glm
 )
+
+foreach(DLL ${DLLsToCopy})
+    add_custom_command(TARGET Engine POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${DLL}"
+        $<TARGET_FILE_DIR:Engine>
+    )
+endforeach()

@@ -1,0 +1,54 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "Default",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}"
+        },
+        {
+            "name": "Debug",
+            "hidden": true,
+            "inherits": "Default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "Release",
+            "hidden": true,
+            "inherits": "Default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "RelWithDebInfo",
+            "hidden": true,
+            "inherits": "Default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "x86_64",
+            "displayName": "Windows x86_64 Debug",
+            "inherits": "Debug",
+            "toolchainFile": "${sourceDir}/cmake/toolchain/llvm-mingw32-x86_64.cmake"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x86_64"
+        }
+    ]
+}
