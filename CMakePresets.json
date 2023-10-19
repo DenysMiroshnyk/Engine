@@ -40,7 +40,10 @@
             "name": "x86_64",
             "displayName": "Windows x86_64 Debug",
             "inherits": "Debug",
-            "toolchainFile": "${sourceDir}/cmake/toolchain/llvm-mingw32-x86_64.cmake"
+            "toolchainFile": "${sourceDir}/cmake/toolchain/llvm-mingw32-x86_64.cmake",
+            "cacheVariables": {
+                "CONAN_PROFILE": "${sourceDir}/cmake/toolchain/llvm-mingw32-x86_64"
+            }
         }
     ],
     "buildPresets": [
